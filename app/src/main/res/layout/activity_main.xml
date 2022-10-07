@@ -50,6 +50,7 @@
         android:clickable="true"
         android:minHeight="48dp"
         android:text="Create Account"
+        android:textColor="#3F42F3"
         android:textSize="16sp"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.102"
@@ -76,6 +77,7 @@
         android:clickable="true"
         android:minHeight="48dp"
         android:text="Forgot Password?"
+        android:textColor="#3F42F3"
         android:textSize="16sp"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.868"
@@ -166,5 +168,19 @@
         app:layout_constraintHorizontal_bias="0.0"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/txtStudentLogin" />
+
+    <EditText
+        android:id="@+id/etLine"
+        android:layout_width="match_parent"
+        android:layout_height="23dp"
+        android:layout_marginTop="80dp"
+        android:ems="10"
+        android:inputType="textPersonName"
+        android:paddingStart="15dp"
+        android:paddingEnd="15dp"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.034"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/btLogin" />
 
 </androidx.constraintlayout.widget.ConstraintLayout>
