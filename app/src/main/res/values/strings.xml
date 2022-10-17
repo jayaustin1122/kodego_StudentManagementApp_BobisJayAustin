@@ -1,3 +1,10 @@
 <resources>
     <string name="app_name">School Management Application</string>
+    <string name="Login">Login</string>
+    <string name="capslogin">LOGIN</string>
+    <string name="username">Username</string>
+    <string name="password">Password</string>
+    <string name="forgot">Forgot Password?</string>
+    <string name="remember">Remember me</string>
+    <string name="CNSC">CAMARINES NORTE STATE COLLEGE</string>
 </resources>

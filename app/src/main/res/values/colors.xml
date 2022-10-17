@@ -9,4 +9,11 @@
     <color name="white">#FFFFFFFF</color>
     <color name="Blue">#0E74EF</color>
     <color name="gray">#AEB0B2</color>
+    <color name="Mildtrans">#77FFFEFE</color>
+    <color name="fulltrans">#00000000</color>
+    <color name="opaque">#ff000000</color>
+    <color name="transparent">#7f000000</color>
+    <color name="maroon">#FF8B0F0F</color>
+
+
 </resources>
