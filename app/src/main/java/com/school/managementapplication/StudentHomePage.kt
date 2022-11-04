@@ -27,7 +27,6 @@ class StudentHomePage : AppCompatActivity() {
                 R.drawable.utsbg,"3:00 - 5:00 pm")
 
         )
-    var toast = Toast.makeText(applicationContext, "Please Enter Username and Password", Toast.LENGTH_SHORT).show()
     adapter = SubjectsAdapter(subjectsList)
 
     adapter.onItemClick = {
