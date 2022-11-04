@@ -11,10 +11,11 @@ class MainActivity : AppCompatActivity() {
     var fullNames = arrayListOf<String>("Harry Potter","Cardo Dalisay")
     var correctPassword = arrayListOf<String>("123456","000000")
     var numberId = arrayListOf<String>("1122","3344")
-    var course   = arrayListOf<String>("Multimedia and Arts","Criminology")
+    var course   = arrayListOf<String>("Multimedia and Arts","Bachelor of Science in Criminology")
     var sections = arrayListOf<String>("A","B")
     var schedule = arrayListOf<String>("Online","Face to Face")
-    var counter = 0
+    var image1 = R.drawable.harry
+    var image = R.drawable.cardo
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         binding = ActivityMainBinding.inflate(layoutInflater)
@@ -35,6 +36,8 @@ class MainActivity : AppCompatActivity() {
             intent.putExtra("course",course[0])
             intent.putExtra("section",sections[0])
             intent.putExtra("sched",schedule[0])
+            intent.putExtra("image1",image1)
+            intent.putExtra("username",correctUserName[0])
             startActivity(intent)
             finish()
             Toast.makeText(applicationContext, "Welcome $username", Toast.LENGTH_SHORT).show()
@@ -47,6 +50,8 @@ class MainActivity : AppCompatActivity() {
             intent.putExtra("course", course[1])
             intent.putExtra("section", sections[1])
             intent.putExtra("sched", schedule[1])
+            intent.putExtra("image1",image)
+            intent.putExtra("username",correctUserName[1])
             startActivity(intent)
             finish()
             Toast.makeText(applicationContext, "Welcome $username", Toast.LENGTH_SHORT).show()

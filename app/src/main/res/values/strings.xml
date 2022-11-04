@@ -7,4 +7,23 @@
     <string name="forgot">Forgot Password?</string>
     <string name="remember">Remember me</string>
     <string name="CNSC">CAMARINES NORTE STATE COLLEGE</string>
+    <!-- TODO: Remove or change this placeholder text -->
+    <string name="hello_blank_fragment">Hello blank fragment</string>
+    <string name="welcome">WELCOME</string>
+    <string name="version">Version 1.0.0</string>
+    <string name="TypeSchedule">Online</string>
+    <string name="UserSample">Ricardo Dalisay</string>
+    <string name="CourseCardo">Bachelor of Science in Crominology</string>
+    <string name="SectionB">Section: B -</string>
+    <string name="idNum">ID: 1122 -</string>
+    <string name="welcome_back">Welcome Back !</string>
+    <string name="subjects">Subjects</string>
+    <string name="announcements">Announcements</string>
+    <string name="assignments">Assignments</string>
+    <string name="notes">Notes</string>
+    <string name="syllabus">Syllabus</string>
+    <string name="description">Description</string>
+    <string name="schedule">Schedule</string>
+    <string name="science">Science</string>
+    <string name="time">3:00-4:00pm</string>
 </resources>

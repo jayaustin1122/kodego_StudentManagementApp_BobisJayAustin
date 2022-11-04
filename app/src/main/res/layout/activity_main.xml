@@ -67,9 +67,8 @@
             android:layout_height="wrap_content"
             android:layout_margin="10dp"
             android:textColorHighlight="@color/Blue"
-            android:outlineSpotShadowColor="@color/black"
             android:textColor="@color/black"
-            android:background="@color/fulltrans"/>
+            android:background="@color/Mildtrans"/>
 
     </com.google.android.material.textfield.TextInputLayout>
 
@@ -90,7 +89,7 @@
             android:layout_margin="10dp"
             android:inputType="textPassword"
             android:textColor="@color/black"
-            android:background="@color/fulltrans"/>
+            android:background="@color/Mildtrans"/>
 
     </com.google.android.material.textfield.TextInputLayout>
 
