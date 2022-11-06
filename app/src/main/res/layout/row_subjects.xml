@@ -24,6 +24,8 @@
                 android:id="@+id/imgsubs"
                 android:layout_width="match_parent"
                 android:layout_height="100dp"
+                android:foreground="@color/foregroundTint"
+                android:foregroundTintMode="src_atop"
                 android:background="@drawable/bgsub1"
                 android:scaleType="fitXY"
                 app:layout_constraintBottom_toBottomOf="parent"
@@ -83,13 +85,14 @@
 
             <ImageButton
                 android:id="@+id/imgBtnMoreSubs"
-                android:layout_margin="5dp"
-                android:background="@color/fulltrans"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
+                android:layout_margin="5dp"
+                android:background="@color/fulltrans"
                 app:layout_constraintEnd_toEndOf="parent"
                 app:layout_constraintTop_toTopOf="parent"
-                app:srcCompat="@drawable/ic_baseline_more_vert_24" />
+                app:srcCompat="@drawable/ic_baseline_more_vert_24"
+                tools:ignore="SpeakableTextPresentCheck,TouchTargetSizeCheck" />
 
         </androidx.constraintlayout.widget.ConstraintLayout>
     </androidx.cardview.widget.CardView>

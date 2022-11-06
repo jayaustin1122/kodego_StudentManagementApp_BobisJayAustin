@@ -1,12 +1,13 @@
 package com.school.managementapplication
 
+
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
-import android.widget.TableLayout
 import com.google.android.material.tabs.TabLayout
 import com.school.managementapplication.databinding.ActivitySubjectsOnClickDetailsBinding
 
 class SubjectsOnClickDetails : AppCompatActivity() {
+
     lateinit var binding : ActivitySubjectsOnClickDetailsBinding
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
@@ -17,8 +18,6 @@ class SubjectsOnClickDetails : AppCompatActivity() {
         binding.tvSubjectTitle.text = subTitle
         var subBgOnClick : Int = intent.getIntExtra("imgBgOnclick",0)
         binding.imgBgOnClickSub.setImageResource(subBgOnClick)
-//        var subDesc : String? = intent.getStringExtra("subDesc")
-//        var subSched : String? = intent.getStringExtra("subSched")
 
         val fragmentAnnouncement = FragmentAnnouncement()
         val fragmentAssignments = FragmentAssignments()

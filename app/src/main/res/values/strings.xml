@@ -18,12 +18,19 @@
     <string name="idNum">ID: 1122 -</string>
     <string name="welcome_back">Welcome Back !</string>
     <string name="subjects">Subjects</string>
-    <string name="announcements">Announcements</string>
-    <string name="assignments">Assignments</string>
-    <string name="notes">Notes</string>
-    <string name="syllabus">Syllabus</string>
+    <string name="announcements">Announcements:</string>
+    <string name="assignments">Assignments:</string>
+    <string name="notes">Notes:</string>
+    <string name="syllabus">Syllabus:</string>
     <string name="description">Description</string>
     <string name="schedule">Schedule</string>
     <string name="science">Science</string>
     <string name="time">3:00-4:00pm</string>
+    <string name="choose_from">Choose From</string>
+    <string name="camera">Camera</string>
+    <string name="gallery">Gallery</string>
+    <string name="announcement_1_sample">announcement 1</string>
+    <string name="informations">Informations</string>
+    <string name="assignments_1">Assignments 1</string>
+    <string name="mark_as_done">Mark as done</string>
 </resources>

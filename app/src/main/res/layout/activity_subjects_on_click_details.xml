@@ -18,6 +18,8 @@
         <ImageView
             android:id="@+id/imgBgOnClickSub"
             android:layout_width="wrap_content"
+            android:foregroundTintMode="src_atop"
+            android:foreground="@color/foregroundTint"
             android:layout_height="wrap_content"
             app:layout_constraintBottom_toBottomOf="parent"
             app:layout_constraintEnd_toEndOf="parent"

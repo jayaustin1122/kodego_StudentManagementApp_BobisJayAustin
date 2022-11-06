@@ -1,11 +1,27 @@
 package com.school.managementapplication
 
+import android.Manifest
+import android.app.Activity
+import android.app.AlertDialog
+import android.app.Dialog
 import android.content.Intent
+import android.graphics.Bitmap
+import android.net.Uri
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
+import android.provider.MediaStore
+import android.provider.Settings
 import android.widget.Toast
+import androidx.activity.result.contract.ActivityResultContracts
 import androidx.recyclerview.widget.LinearLayoutManager
+import com.karumi.dexter.Dexter
+import com.karumi.dexter.PermissionToken
+import com.karumi.dexter.listener.PermissionDeniedResponse
+import com.karumi.dexter.listener.PermissionGrantedResponse
+import com.karumi.dexter.listener.PermissionRequest
+import com.karumi.dexter.listener.single.PermissionListener
 import com.school.managementapplication.databinding.ActivityStudentHomePageBinding
+import com.school.managementapplication.databinding.CameraGalleryDialogBinding
 
 class StudentHomePage : AppCompatActivity() {
     lateinit var binding: ActivityStudentHomePageBinding
@@ -38,6 +54,13 @@ class StudentHomePage : AppCompatActivity() {
         startActivity(intent)
 
     }
+        binding.imgBtnChangeEdit.setOnClickListener(){
+            showCustomDialog()
+            binding.imgBtnChangeEdit.setImageResource(R.drawable.ic_baseline_edit_24)
+        }
+
+
+
         binding.myRecylerView.adapter = adapter
         binding.myRecylerView.layoutManager = LinearLayoutManager(this)
 
@@ -58,5 +81,106 @@ class StudentHomePage : AppCompatActivity() {
     var username : String? = intent.getStringExtra("username")
     binding.tvWelcome.text = "Welcome Back! ${username}"
     }
+    private fun showCustomDialog(){
+        //binding the dialog xml
+        val customDialog: Dialog = Dialog(this)
+        var dialogBinding : CameraGalleryDialogBinding = CameraGalleryDialogBinding.inflate(layoutInflater)
+        customDialog.setContentView(dialogBinding.root)
+
+
+        //calling buttons yes and no
+
+        dialogBinding.btnCamera.setOnClickListener() {
+            showCamera()
+        }
+        dialogBinding.btnGallery.setOnClickListener(){
+            showGallery()
+        }
+        customDialog.show()
+    }
+    // to access camera.
+    private fun showCamera() {
+        Dexter.withContext(this).withPermission(
+            Manifest.permission.CAMERA
+        ).withListener(object : PermissionListener {
+            override fun onPermissionGranted(p0: PermissionGrantedResponse?) {
+                Toast.makeText(applicationContext, "Camera Permission Granted", Toast.LENGTH_SHORT).show()
+                //show camera
+                val cameraIntent = Intent(MediaStore.ACTION_IMAGE_CAPTURE)
+                //declare the camera
+
+                cameraLauncher.launch(cameraIntent)
+//                startActivity(cameraIntent) // to go to camera only we cannot get an output or the image.
+            }
+
+            override fun onPermissionDenied(p0: PermissionDeniedResponse?) {
+                Toast.makeText(applicationContext, "Camera Permission Denied", Toast.LENGTH_SHORT).show()
+                gotoSettings()
+            }
+
+            override fun onPermissionRationaleShouldBeShown(
+                request : PermissionRequest?,
+                token: PermissionToken?
+            ) {
+                token?.continuePermissionRequest()
+            }
+
+        }).onSameThread().check() // to show the permission
+    }
+    private fun showGallery() {
+        Dexter.withContext(this).withPermission(
+            Manifest.permission.READ_EXTERNAL_STORAGE
+        ).withListener(object : PermissionListener {
+            override fun onPermissionGranted(p0: PermissionGrantedResponse?) {
+                val galleryIntent = Intent(Intent.ACTION_PICK, MediaStore.Images.Media.EXTERNAL_CONTENT_URI)
+                galleryLauncher.launch(galleryIntent)
+            }
+
+            override fun onPermissionDenied(p0: PermissionDeniedResponse?) {
+                gotoSettings()
+            }
+
+            override fun onPermissionRationaleShouldBeShown(
+                request : PermissionRequest?,
+                token: PermissionToken?
+            ) {
+                token?.continuePermissionRequest()
+            }
+
+        }).onSameThread().check() // to show the permission
+    }
+    // handle data or images from the camera
+    val cameraLauncher = registerForActivityResult(ActivityResultContracts.StartActivityForResult()){ result ->
+        if (result.resultCode == Activity.RESULT_OK) {
+            result.data?.extras.let {
+                val image : Bitmap = result.data?.extras?.get("data") as Bitmap // get only the image.
+                binding.imgProfile.setImageBitmap(image)
+            }
+        }
+
+    }
+    // handle data or images in Gallery
+    val galleryLauncher = registerForActivityResult(ActivityResultContracts.StartActivityForResult()){ result ->
+        if (result.resultCode == Activity.RESULT_OK) {
+            result.data?.let {
+                val selectedImage = result.data?.data
+                binding.imgProfile.setImageURI(selectedImage)
+            }
+
+        }
+    }
+    private fun gotoSettings() {
+        AlertDialog.Builder(this).setMessage("Permission is Denied Go to Settings to Change it to allow.")
+            .setPositiveButton("Go to Settings"){ dialog, item ->
+                val intent = Intent(Settings.ACTION_APPLICATION_DETAILS_SETTINGS)
+                var uri = Uri.fromParts("package",packageName,null)
+                intent.data = uri
+                startActivity(intent)
+            }.setNegativeButton("Cancel"){ dialog, item ->
+                dialog.dismiss()
+            }.show()
+
+    }
+
 
 }

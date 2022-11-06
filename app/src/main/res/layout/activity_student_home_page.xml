@@ -9,7 +9,7 @@
     <androidx.constraintlayout.widget.ConstraintLayout
         android:id="@+id/box1"
         android:layout_width="0dp"
-        android:layout_height="196dp"
+        android:layout_height="wrap_content"
         android:layout_marginTop="4dp"
         android:background="@drawable/profilebackground"
         app:layout_constraintEnd_toEndOf="parent"
@@ -17,59 +17,74 @@
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent">
 
+        <FrameLayout
+            android:id="@+id/imgFrameLayout"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="10dp"
+            android:layout_marginBottom="10dp"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/imgBtnMenu">
+
+            <de.hdodenhof.circleimageview.CircleImageView
+                android:id="@+id/imgProfile"
+                android:layout_width="100dp"
+                android:layout_height="100dp"
+                android:layout_marginTop="10dp"
+                android:layout_marginBottom="10dp"
+                android:src="@drawable/cardo"
+                app:civ_border_color="@color/white"
+                app:civ_border_width="2dp" />
+
+            <ImageButton
+                android:id="@+id/imgBtnChangeEdit"
+                android:layout_width="30dp"
+                android:layout_height="30dp"
+                android:layout_gravity="bottom|center"
+                android:layout_marginBottom="10dp"
+                android:background="@color/fulltrans"
+                app:srcCompat="@drawable/ic_baseline_add_a_photo_24"
+                tools:ignore="SpeakableTextPresentCheck,TouchTargetSizeCheck" />
+        </FrameLayout>
+
         <TextView
             android:id="@+id/blanksched"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:layout_margin="3dp"
-            android:layout_marginTop="3dp"
-            android:layout_marginBottom="10dp"
             android:hint="@string/TypeSchedule"
             android:textColor="@color/white"
             android:textColorHint="@color/white"
             android:textSize="13sp"
 
-            app:layout_constraintBottom_toBottomOf="parent"
             app:layout_constraintStart_toEndOf="@+id/blankSection"
             app:layout_constraintTop_toTopOf="@+id/blankSection" />
 
-        <de.hdodenhof.circleimageview.CircleImageView
-            android:id="@+id/imgProfile"
-            android:layout_width="70dp"
-            android:layout_height="70dp"
-            android:src="@drawable/cardo"
-            app:civ_border_color="@color/white"
-            app:civ_border_width="2dp"
-            app:layout_constraintEnd_toEndOf="parent"
-            app:layout_constraintHorizontal_bias="0.0"
-            app:layout_constraintStart_toStartOf="@+id/imgBtnMenu"
-            app:layout_constraintTop_toBottomOf="@+id/imgBtnMenu" />
-
         <TextView
             android:id="@+id/blankName"
-            android:layout_width="0dp"
+            android:layout_width="298dp"
             android:layout_height="wrap_content"
-            android:gravity="left"
+            android:layout_marginStart="4dp"
+            android:layout_marginTop="73dp"
+            android:fontFamily="sans-serif-black"
             android:hint="@string/UserSample"
             android:textColor="@color/white"
             android:textColorHint="@color/white"
-            android:textSize="20sp"
+            android:textSize="25sp"
             android:textStyle="bold"
             app:layout_constraintEnd_toEndOf="parent"
-            app:layout_constraintHorizontal_bias="0.144"
-            app:layout_constraintStart_toStartOf="@+id/imgProfile"
-            app:layout_constraintTop_toBottomOf="@+id/imgProfile" />
+            app:layout_constraintHorizontal_bias="0.0"
+            app:layout_constraintStart_toEndOf="@+id/imgFrameLayout"
+            app:layout_constraintTop_toTopOf="parent" />
 
         <TextView
             android:id="@+id/blankCourse"
-            android:layout_width="0dp"
+            android:layout_width="301dp"
             android:layout_height="wrap_content"
-            android:gravity="left"
             android:hint="@string/CourseCardo"
             android:textColor="@color/white"
             android:textColorHint="@color/white"
             android:textSize="15sp"
-            app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintStart_toStartOf="@+id/blankName"
             app:layout_constraintTop_toBottomOf="@+id/blankName" />
 
@@ -77,13 +92,11 @@
             android:id="@+id/blankSection"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:layout_margin="3dp"
-            android:layout_marginBottom="10dp"
+            android:layout_marginStart="3dp"
             android:hint="@string/SectionB"
             android:textColor="@color/white"
             android:textColorHint="@color/white"
             android:textSize="13sp"
-            app:layout_constraintBottom_toBottomOf="parent"
             app:layout_constraintStart_toEndOf="@+id/blankid"
             app:layout_constraintTop_toTopOf="@+id/blankid" />
 
@@ -95,7 +108,6 @@
             android:textColor="@color/white"
             android:textColorHint="@color/white"
             android:textSize="13sp"
-            app:layout_constraintBottom_toBottomOf="parent"
             app:layout_constraintStart_toStartOf="@+id/blankCourse"
             app:layout_constraintTop_toBottomOf="@+id/blankCourse" />
 
@@ -133,38 +145,22 @@
             app:srcCompat="@drawable/ic_baseline_more_vert_24"
             tools:ignore="SpeakableTextPresentCheck,TouchTargetSizeCheck" />
 
-        <ImageButton
-            android:id="@+id/umBtnEdit"
-            android:layout_width="30dp"
-            android:layout_height="30dp"
-            android:background="@color/fulltrans"
-            app:layout_constraintBottom_toBottomOf="@+id/imgProfile"
-            app:layout_constraintStart_toEndOf="@+id/imgProfile"
-            app:srcCompat="@drawable/ic_baseline_edit_24"
-            tools:ignore="SpeakableTextPresentCheck,TouchTargetSizeCheck" />
-
         <TextView
             android:id="@+id/tvWelcome"
-            android:layout_width="wrap_content"
+            android:layout_width="0dp"
             android:layout_height="wrap_content"
-            android:layout_marginTop="10dp"
+            android:layout_marginTop="18dp"
+            android:gravity="center"
             android:text="@string/welcome_back"
             android:textColor="@color/white"
-            android:textSize="20dp"
+            android:textSize="15dp"
+            android:fontFamily="sans-serif"
             android:textStyle="bold"
-            app:layout_constraintEnd_toEndOf="parent"
-            app:layout_constraintHorizontal_bias="0.498"
-            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintEnd_toStartOf="@+id/imgBtnBellNotifications"
+            app:layout_constraintHorizontal_bias="0.0"
+            app:layout_constraintStart_toEndOf="@+id/imgBtnMenu"
             app:layout_constraintTop_toTopOf="parent" />
 
-        <ImageView
-            android:id="@+id/imgMiniLogo"
-            android:layout_width="43dp"
-            android:layout_marginStart="5dp"
-            android:layout_height="43dp"
-            app:layout_constraintStart_toEndOf="@+id/imgBtnMenu"
-            app:layout_constraintTop_toTopOf="@+id/imgBtnMenu"
-            app:srcCompat="@drawable/logocnsc" />
     </androidx.constraintlayout.widget.ConstraintLayout>
 
     <androidx.recyclerview.widget.RecyclerView
@@ -176,8 +172,10 @@
         android:layout_marginBottom="5dp"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.0"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/tvSubjectsTitile" />
+        app:layout_constraintTop_toBottomOf="@+id/tvSubjectsTitile"
+        app:layout_constraintVertical_bias="1.0" />
 
     <TextView
         android:id="@+id/tvSubjectsTitile"
@@ -187,7 +185,7 @@
         android:textColor="@color/black"
         android:textSize="25sp"
         android:textStyle="bold"
-        android:layout_margin="5dp"
+        android:layout_marginStart="5dp"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/box1" />
 
