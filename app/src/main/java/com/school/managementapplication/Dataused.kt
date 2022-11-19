@@ -1,3 +1,3 @@
 package com.school.managementapplication
 
-data class Dataused (val title : String, val information : String)
+data class Dataused (var title : String, var information : String)

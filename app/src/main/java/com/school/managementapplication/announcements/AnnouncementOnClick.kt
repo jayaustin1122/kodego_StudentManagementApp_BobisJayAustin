@@ -1,4 +1,4 @@
-package com.school.managementapplication
+package com.school.managementapplication.announcements
 
 import android.content.Intent
 import androidx.appcompat.app.AppCompatActivity
@@ -6,7 +6,7 @@ import android.os.Bundle
 import com.school.managementapplication.databinding.ActivityAnnouncementOnClickBinding
 import com.school.managementapplication.databinding.RowAnnouncementsBinding
 
-class AnnouncementOnClick : AppCompatActivity() {
+open class AnnouncementOnClick : AppCompatActivity() {
     lateinit var binding : ActivityAnnouncementOnClickBinding
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)

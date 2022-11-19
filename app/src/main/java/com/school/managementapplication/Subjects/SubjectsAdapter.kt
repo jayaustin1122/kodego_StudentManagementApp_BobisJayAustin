@@ -1,4 +1,4 @@
-package com.school.managementapplication
+package com.school.managementapplication.Subjects
 
 import android.view.LayoutInflater
 import android.view.ViewGroup

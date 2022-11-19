@@ -1,4 +1,4 @@
-package com.school.managementapplication
+package com.school.managementapplication.syllabus
 
 import android.os.Bundle
 import androidx.fragment.app.Fragment

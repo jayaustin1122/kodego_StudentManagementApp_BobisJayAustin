@@ -1,9 +1,13 @@
-package com.school.managementapplication
+package com.school.managementapplication.Subjects
 
 
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
 import com.google.android.material.tabs.TabLayout
+import com.school.managementapplication.notes.FragmentNotes
+import com.school.managementapplication.syllabus.FragmentSyllabus
+import com.school.managementapplication.announcements.FragmentAnnouncement
+import com.school.managementapplication.assignments.FragmentAssignments
 import com.school.managementapplication.databinding.ActivitySubjectsOnClickDetailsBinding
 
 class SubjectsOnClickDetails : AppCompatActivity() {
@@ -23,7 +27,6 @@ class SubjectsOnClickDetails : AppCompatActivity() {
         val fragmentAssignments = FragmentAssignments()
         val fragmentSyllabus = FragmentSyllabus()
         val fragmentNotes = FragmentNotes()
-        val studentHomePage = StudentHomePage()
 
         supportFragmentManager.beginTransaction().apply {
             replace(binding.mainFragment.id,fragmentAnnouncement)

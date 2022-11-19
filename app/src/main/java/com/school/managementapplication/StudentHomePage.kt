@@ -20,6 +20,9 @@ import com.karumi.dexter.listener.PermissionDeniedResponse
 import com.karumi.dexter.listener.PermissionGrantedResponse
 import com.karumi.dexter.listener.PermissionRequest
 import com.karumi.dexter.listener.single.PermissionListener
+import com.school.managementapplication.Subjects.Subjects
+import com.school.managementapplication.Subjects.SubjectsAdapter
+import com.school.managementapplication.Subjects.SubjectsOnClickDetails
 import com.school.managementapplication.databinding.ActivityStudentHomePageBinding
 import com.school.managementapplication.databinding.CameraGalleryDialogBinding
 
@@ -46,7 +49,7 @@ class StudentHomePage : AppCompatActivity() {
     adapter = SubjectsAdapter(subjectsList)
 
     adapter.onItemClick = {
-        val intent = Intent(this,SubjectsOnClickDetails::class.java)
+        val intent = Intent(this, SubjectsOnClickDetails::class.java)
         intent.putExtra("subtitle",it.subTitle)
           intent.putExtra("imgBgOnclick",it.subBg)
 //        intent.putExtra("subDesc",it.subDescription)
@@ -92,9 +95,11 @@ class StudentHomePage : AppCompatActivity() {
 
         dialogBinding.btnCamera.setOnClickListener() {
             showCamera()
+            customDialog.dismiss()
         }
         dialogBinding.btnGallery.setOnClickListener(){
             showGallery()
+            customDialog.dismiss()
         }
         customDialog.show()
     }

@@ -33,4 +33,10 @@
     <string name="informations">Informations</string>
     <string name="assignments_1">Assignments 1</string>
     <string name="mark_as_done">Mark as done</string>
+    <string name="notes1">Notes:</string>
+    <string name="enter_new_title">Enter New Title</string>
+    <string name="update">Update</string>
+    <string name="enter_title">Enter title</string>
+    <string name="enter_notes">Enter Notes</string>
+    <string name="add_item">Add Item</string>
 </resources>

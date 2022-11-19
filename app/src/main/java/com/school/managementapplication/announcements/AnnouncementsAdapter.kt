@@ -1,8 +1,9 @@
-package com.school.managementapplication
+package com.school.managementapplication.announcements
 
 import android.view.LayoutInflater
 import android.view.ViewGroup
 import androidx.recyclerview.widget.RecyclerView
+import com.school.managementapplication.Dataused
 import com.school.managementapplication.databinding.RowAnnouncementsBinding
 
 class AnnouncementsAdapter (val announcements: MutableList<Dataused>):RecyclerView.Adapter<AnnouncementsAdapter.AnnouncementsHolder>(){

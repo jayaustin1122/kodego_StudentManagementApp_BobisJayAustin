@@ -1,4 +1,4 @@
-package com.school.managementapplication
+package com.school.managementapplication.assignments
 
 import android.content.Intent
 import android.os.Bundle
@@ -7,7 +7,8 @@ import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
 import androidx.recyclerview.widget.LinearLayoutManager
-import com.school.managementapplication.databinding.FragmentAnnouncementBinding
+import com.school.managementapplication.Dataused
+import com.school.managementapplication.announcements.AnnouncementOnClick
 import com.school.managementapplication.databinding.FragmentAssignmentsBinding
 
 
@@ -42,6 +43,7 @@ class FragmentAssignments : Fragment() {
             intent.putExtra("title", it.title)
             intent.putExtra("info", it.information)
             startActivity(intent)
+
         }
         binding.recyclerViewAnnouncements.adapter = adapter
         binding.recyclerViewAnnouncements.layoutManager = LinearLayoutManager(this@FragmentAssignments.requireContext())
